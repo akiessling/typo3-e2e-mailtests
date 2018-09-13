@@ -9,3 +9,4 @@ mailtests/credentials/*.env
 _generated
 ENABLE_INSTALL_TOOL
 gmail.php
+webapp/htdocs/Web/fileadmin/_processed_

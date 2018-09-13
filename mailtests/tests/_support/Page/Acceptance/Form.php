@@ -8,17 +8,17 @@ class Form
     public static $URL = '';
 
     public static $subject = 'Hello Cluj!';
-    public static $subjectField = '#demo-subject';
+    public static $subjectField = '#demo-external-subject';
 
     public static $body = 'Testmessage';
-    public static $bodyField = '#demo-message';
+    public static $bodyField = '#demo-external-message';
 
     public static $name = 'Form Tester';
-    public static $nameField = '#demo-name';
+    public static $nameField = '#demo-external-name';
 
-    public static $emailField = '#demo-email';
+    public static $emailField = '#demo-external-email';
 
-    public static $submitButton = '#demo [type="submit"]';
+    public static $submitButton = '#demo-external [type="submit"]';
 
     public static $summaryMessage = 'Summary page';
     /**
