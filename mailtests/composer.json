@@ -7,7 +7,6 @@
     ],
     "require": {
         "codeception/codeception": "^2.3",
-        "ddeboer/imap": "^1.2",
         "ericmartel/codeception-email": "^1.0",
         "techdivision/codeception-email-imap": "dev-master",
         "vlucas/phpdotenv": "^2.5"

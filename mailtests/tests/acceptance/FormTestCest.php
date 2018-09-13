@@ -64,6 +64,7 @@ class FormTestCest
         $I->seeInOpenedEmailBody($name);
         $I->canSeeInOpenedEmailBody($sender);
         $I->seeInOpenedEmailBody($message);
+        $I->canSeeNoRelevantSpamScore();
 
         $I->amGoingTo('Check the mail-inbox for the admin mail');
         $I->accessInboxFor('mailtester+bar-camp-test@example.org');
@@ -72,5 +73,6 @@ class FormTestCest
         $I->seeInOpenedEmailSubject($subject);
         $I->canSeeInOpenedEmailBody($name);
         $I->canSeeInOpenedEmailSender($sender);
+        $I->canSeeNoRelevantSpamScore();
     }
 }
