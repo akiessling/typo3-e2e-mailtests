@@ -1,0 +1,104 @@
+
+renderingOptions:
+  submitButtonLabel: Submit
+identifier: demo-external
+label: 'Demo External Mail'
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Your message: {subject}'
+      recipientAddress: e2emailtest1509@maildrop.cc
+      recipientName: Mailtester
+      senderAddress: e2emailtest1509@maildrop.cc
+      senderName: ''
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+      translation:
+        language: ''
+    identifier: EmailToReceiver
+  -
+    options:
+      subject: Thanks
+      recipientAddress: '{email}'
+      recipientName: '{name}'
+      senderAddress: test@example.org
+      senderName: Tester
+      replyToAddress: ''
+      carbonCopyAddress: ''
+      blindCarbonCopyAddress: ''
+      format: html
+      attachUploads: true
+    identifier: EmailToSender
+  -
+    options:
+      pageUid: '5'
+      additionalParameters: ''
+    identifier: Redirect
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: page-1
+    label: 'Contact Form'
+    type: Page
+    renderables:
+      -
+        defaultValue: ''
+        identifier: name
+        label: Name
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Name
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: subject
+        label: Subject
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Subject
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: Email
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Email address'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: Message
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+        validators:
+          -
+            identifier: NotEmpty
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    identifier: summarypage
+    label: 'Summary page'
+    type: SummaryPage

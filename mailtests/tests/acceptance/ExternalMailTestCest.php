@@ -9,7 +9,6 @@ class ExternalMailTestCest
     /**
      * @param \AcceptanceTester $I
      * @env gmail
-     * @throws \Codeception\Exception\ConfigurationException
      */
     public function testGmail(AcceptanceTester $I)
     {
@@ -35,10 +34,12 @@ class ExternalMailTestCest
     /**
      * @param \AcceptanceTester $I
      * @env yandex
-     * @throws \Codeception\Exception\ConfigurationException
      */
     public function testYandex(AcceptanceTester $I)
     {
+        // yandex screws up archiving, puts them under the inbox
+        $I->deleteAllEmails();
+
         // this address will receive the mail, same as the one we fetch
         $mailAccount = getenv('YANDEX_USER');
         $I->amGoingTo('Test the form');

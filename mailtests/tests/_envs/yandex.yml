@@ -16,5 +16,5 @@ modules:
         wait: 10000
       # since the tests clean the inbox before running, this should only be needed,
       # if you want to implement some archiving for e.g. failed tests
-      deleteEmailsAfterScenario: false
+      deleteEmailsAfterScenario: true
 
